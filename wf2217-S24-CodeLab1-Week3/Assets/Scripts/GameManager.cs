@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
 
     private int highScore = 0;
 
-    private const string KEY_HIGH_SCORE = "HIGH SCORE";
+    private const string KEY_HIGH_SCORE = "hs";
 
     int HighScore
     {
@@ -98,7 +98,8 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A))
         {
             Debug.Log("Delete");
-            PlayerPrefs.DeleteKey(KEY_HIGH_SCORE);
+            File.WriteAllText(DATA_FULL_HS_FILE_PATH, "0");
+            //PlayerPrefs.DeleteKey(KEY_HIGH_SCORE);
         }
         
         //timer start
